@@ -1,8 +1,9 @@
 <div class="container">
-  <button class="btn btn-primary mt-5 mb-5">Add new task</button>
+  <button class="btn btn-primary mt-5 mb-5" (click)="newTask()">Add new task</button>
   @if (showList) {
     @for (task of list.tasks; track $index) {
-      {{ task.body }}<br>
+<!--      {{ task.body }}<br>-->
+      <app-task [task]="task" (doDelete)="deleteTask($event)"></app-task>
     }
   }
 </div>

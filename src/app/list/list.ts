@@ -15,4 +15,9 @@ export class List {
   public addTask(task: Task): void {
     this._tasks.push(task);
   }
+
+  public deleteTask(task: Task) {
+    let index = this._tasks.findIndex(value => task.id === value.id);
+    this._tasks.splice(index, 1);
+  }
 }

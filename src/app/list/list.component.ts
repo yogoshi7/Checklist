@@ -35,5 +35,11 @@ export class ListComponent implements OnInit{
   get list() {
     return this._list;
   }
+  public newTask() {
+
+  }
+  public deleteTask(task: Task) {
+    this.list.deleteTask(task);
+  }
 
 }

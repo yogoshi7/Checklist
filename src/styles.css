@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+html, body {
   font-family: "Liberation Mono", serif;
+  height: 100%;
+}
+#content {
+  min-height: calc(100vh - 56px);
+}
+.footer {
+  height: 56px;
 }

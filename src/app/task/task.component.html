@@ -1,1 +1,11 @@
-<p>task works!</p>
+<div class="container p-3 border border-1 border-primary-subtle mb-3 rounded d-flex flex-row">
+  <p class="w-75">
+    {{ task.body }}
+  </p>
+  <div class="btn-group-sm w-25 text-end">
+    <input type="checkbox" class="btn-check" id="compCheck-{{ task.id }}" autocomplete="off">
+    <label class="btn btn-outline-primary" for="compCheck-{{ task.id }}">Completed</label>
+    <button (click)="editTask()" class="btn btn-primary">Edit</button>
+    <button (click)="deleteTask()" class="btn btn-primary">Delete</button>
+  </div>
+</div>
