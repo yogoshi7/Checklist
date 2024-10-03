@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from "../task";
 import { ListService } from "../../list/service/list.service";
-import { TaskService } from "../service/task.service";
 import { FormsModule } from "@angular/forms";
 
 @Component({
@@ -12,9 +11,9 @@ import { FormsModule } from "@angular/forms";
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
-  providers: [ListService, TaskService]
+  providers: [ListService]
 })
-export class TaskComponent implements OnInit{
+export class TaskComponent {
   @Input()
   //@ts-ignore
   public task: Task;
@@ -25,10 +24,6 @@ export class TaskComponent implements OnInit{
   public doDelete = new EventEmitter<void>();
 
   constructor(private listService: ListService) {
-  }
-
-  public ngOnInit() {
-
   }
 
   public editTask(): void {
