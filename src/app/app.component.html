@@ -1,11 +1,13 @@
 <header class="container">
   <span class="text-center">
     <h1 class="display-3">Checklist</h1>
-    <p class="h1">Your checklist name</p>
+<!--    <p class="h1">Your checklist name</p>-->
+    @if (isTitleEdit) {
+      <input [(ngModel)]="checklistTitle" id="listTitle" type="text" class="form-control text-center form-control-lg" [class.invisible]="!isTitleEdit" (keyup.enter)="leaveEdit()" (focusout)="leaveEdit()">
+    } @else {
+      <p class="h1 d-flex justify-content-center" (click)="editTitle()" [class.invisible]="isTitleEdit">{{ checklistTitle }}</p>
+    }
   </span>
-  <nav class="navbar-nav">
-    <button class="btn btn-sm btn-outline-primary">Create new checklist</button>
-  </nav>
 </header>
 <div id="content" class="flex-grow-1">
 <app-list>

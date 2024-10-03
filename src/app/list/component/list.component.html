@@ -1,0 +1,10 @@
+<div class="container">
+  <button class="btn btn-primary mt-5 mb-5" (click)="newTask()">Add task</button>
+  <button class="btn btn-outline-primary mt-5 mb-5" (click)="clearList()">Clear all</button>
+  @if (showList) {
+    @for (task of list; track $index) {
+<!--      {{ task.body }}<br>-->
+      <app-task [task]="task" (doDelete)="deleteTask($index)"></app-task>
+    }
+  }
+</div>
